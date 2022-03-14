@@ -8,25 +8,34 @@
 //-----------
 
 
-const GOOD_PASSWORD = "qwerty123";
+// const GOOD_PASSWORD = "qwerty123";
 
-let count = 0;
-const MAX_TRY = 5;
+// let count = 0;
+// const MAX_TRY = 5;
 
-while (count++ < MAX_TRY) {
+// while (count++ < MAX_TRY) {
 
-  let password = prompt("Введите пароль:");
+//   let password = prompt("Введите пароль:");
 
-  if (password === GOOD_PASSWORD) {
-    break;
-  }
-}
-console.log("password good");
+//   if (password === GOOD_PASSWORD) {
+//     break;
+//   }
+// }
+// console.log("password good");
 
 
 //------------
 
+let count = 0;
+const MAX_TRY = 5;
 
+do{
+  console.log('Do' + count);
+}while(count++ < MAX_TRY)
+
+console.log("password good");
+
+//------------
 
 // while(count < 10){
 //   if(++count % 2 === 1){
