@@ -1,25 +1,16 @@
-function factorial(number) {
+function getPower(base, power) {
+  if (power === 0) {
+    return 1;
+  }
+  if (power === 1) {
+    return base;
+  }
 
-if(isNaN(number)){
-  return false
-}
+  let result = 1;
 
-if(number === 1 || number === 0){
-  return 1;
-}
-
-const MAX_NUM = 250;
-
-if(number > MAX_NUM){
-  return false;
-}
-
-  let result = 1n;
-
-  for (let i = 1; i <= number; i++) {
-      result *= BigInt(i); // result = result * i
+  for (let i = 1; i <= power; i++) {
+    result *= base;
   }
   return result;
 }
-let res = factorial(20);
-console.log(res);
+
