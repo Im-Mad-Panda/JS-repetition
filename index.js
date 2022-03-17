@@ -1,16 +1,31 @@
-function getPower(base, power) {
-  if (power === 0) {
-    return 1;
-  }
-  if (power === 1) {
-    return base;
-  }
+const cat = {
+  name: "Barsik",
+  age: 4,
+  color: "ginger",
+  weight: 5,
+  breed: "Cheshirkiy",
+  isNale: true,
+  isSleeping: false,
+  run: function () { //run - метод
+    return "I am running";
+  },
+  sleep: function () {
+    return "Zzzz...";
+  },
+  meow: function () {
+    return "Meowww!";
+  },
+};
 
-  let result = 1;
+const res = cat.run(); // вызов функции
+alert(res);
 
-  for (let i = 1; i <= power; i++) {
-    result *= base;
-  }
-  return result;
-}
+cat.age = cat.age + 1; //cat.age++
 
+alert(cat.age); // read
+
+delete cat.isSleeping; // delete
+
+// cat.isSleeping = undefined;
+
+cat.girlFriend = "Murka";
