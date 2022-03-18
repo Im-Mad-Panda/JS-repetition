@@ -1,36 +1,19 @@
-function Car(name, maxSpeed) {
+function Worker(name, age, rate, days) {
   this.name = name;
-  this.maxSpeed = maxSpeed;
-  this.speed = 0;
+  this.age = age;
+  this.rate = rate;
+  this.days = days;
 
-  this.accelerate = function (value) {
-    if (value < 0) {
+  this.getSalary = function () {
+    if (isNaN(this.days) || isNaN(this.rate))  {
       return false;
     }
-    this.speed = this.speed + value;
-    if (this.speed > this.maxSpeed) {
-      this.speed = this.maxSpeed;
-      return this.speed;
+    if(this.days > 31){
+      return null;
     }
-    return this.speed;
-  };
-
-  this.deaccelerate = function (value) {
-    if (value < 0) {
-      return false;
-    }
-    this.speed = this.speed - value;
-    if (this.speed < 0) {
-      this.speed = 0;
-      return this.speed;
-    }
-    return this.speed;
-  }
-
-  this.stop = function () {
-    return (this.speed = 0)
+    return this.rate * this.days;
   }
 }
 
-const blueCar = new Car("VW", 300);
-console.log(blueCar);
+const worker1 = new Worker("Ray", 35, 6000, 30);
+console.log(worker1);
