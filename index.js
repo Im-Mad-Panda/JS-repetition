@@ -1,19 +1,11 @@
-function Worker(name, age, rate, days) {
-  this.name = name;
-  this.age = age;
-  this.rate = rate;
-  this.days = days;
+number1 = 6;
+number2 = 4;
 
-  this.getSalary = function () {
-    if (isNaN(this.days) || isNaN(this.rate))  {
-      return false;
-    }
-    if(this.days > 31){
-      return null;
-    }
-    return this.rate * this.days;
-  }
+function getDecription(){
+  return 'чисел'
 }
 
-const worker1 = new Worker("Ray", 35, 6000, 30);
-console.log(worker1);
+console.log(`Сумма ${getDecription()}: ${number1} + ${number2} = ${number1 + number2}`);
+console.log(`Отнимание ${getDecription()}: ${number1} - ${number2} = ${number1 - number2}`);
+console.log(`Умножение ${getDecription()}: ${number1} * ${number2} = ${number1 * number2}`);
+console.log(`Деление ${getDecription()}: ${number1} / ${number2} = ${number1 / number2}`);
