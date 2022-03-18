@@ -1,11 +1,10 @@
-number1 = 6;
-number2 = 4;
+const PROTOCOL = 'http://';
+const SERVER_IP = 'www.google.com';
+const PROT = '80';
 
-function getDecription(){
-  return 'чисел'
+function createQuery(absPath){
+  const url = `${PROTOCOL}${SERVER_IP}:${PROT}${absPath}`;
+  return url;
 }
-
-console.log(`Сумма ${getDecription()}: ${number1} + ${number2} = ${number1 + number2}`);
-console.log(`Отнимание ${getDecription()}: ${number1} - ${number2} = ${number1 - number2}`);
-console.log(`Умножение ${getDecription()}: ${number1} * ${number2} = ${number1 * number2}`);
-console.log(`Деление ${getDecription()}: ${number1} / ${number2} = ${number1 / number2}`);
+createQuery();
+console.log(createQuery('/index.html'))
