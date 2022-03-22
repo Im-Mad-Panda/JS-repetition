@@ -1,11 +1,12 @@
-function getMultypTable() {
-  const table = {};
-  for (let i = 1; i < 10; i++) {
-    for (let j = 1; j < 10; j++) {
-      table[`${i} * ${j}`] = i * j;
-    }
-  }
-  return table;
+'use strict'
+
+const obj ={};
+
+function MyObj(){
+  // if(!new.target){
+  //   return new MyObj()
+  // }
+  // this.prop = 'value';
 }
-getMultypTable();
-console.log(getMultypTable());
+
+const obj2 = new MyObj();
