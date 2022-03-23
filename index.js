@@ -1,12 +1,15 @@
 'use strict'
 
-const obj ={};
+const userTests = {
+    0: '380995445346',
+    1: '380665434563',
+    2: '380958645780',
+};
 
-function MyObj(){
-  // if(!new.target){
-  //   return new MyObj()
-  // }
-  // this.prop = 'value';
-}
 
-const obj2 = new MyObj();
+
+const arrTests = new Array('380995445346', '380665434563', '380958645780');
+
+
+
+const arr = ['380995445346', '380665434563', '380958645780'];
