@@ -1,15 +1,34 @@
-'use strict'
+"use strict";
 
-const userTests = {
-    0: '380995445346',
-    1: '380665434563',
-    2: '380958645780',
-};
+function MyArray() {
+  this.length = 0;
 
+  for(let i = 0; i < arguments.length; i++){
+      this.push(arguments[i]);
+  }
+}
 
+function MyProtoArray() {
 
-const arrTests = new Array('380995445346', '380665434563', '380958645780');
+  this.push = function () {
 
+    for (let i = 0; i < arguments.length; i++) {
+      this[this.length++] = arguments[i];
+    }
+    return this.length;
+  };
 
+  this.pop = function () {
+    if (this.length === 0) {
+      return;
+    }
 
-const arr = ['380995445346', '380665434563', '380958645780'];
+    const delItem = this[this.length - 1];
+    delete this[--this.length];
+    return delItem;
+  };
+}
+
+MyArray.prototype = new MyProtoArray();
+
+const myArr = new MyArray();
