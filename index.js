@@ -1,39 +1,20 @@
 "use strict";
 
-function MyArray() {
-  this.length = 0;
+function drowSquareWithDiagonal (dimension, drowSymbol){
 
-  for(let i = 0; i < arguments.length; i++){
-    
-    if(isNaN(arguments[i])){
-        return;
-    }
+  let str = '';
 
-      this.push(+arguments[i]);
+  for (let i = 0; i < dimension; i++) {
+    for (let j = 0; j < dimension; j++){
+    if(i === 0 || i === (dimension - 1) || j === 0 || j === (dimension - 1) || i === j){
+    str+= drowSymbol;
+    } else {
+    str += ' ';
   }
 }
-
-function MyProtoArray() {
-
-  this.push = function () {
-
-    for (let i = 0; i < arguments.length; i++) {
-      this[this.length++] = arguments[i];
-    }
-    return this.length;
-  };
-
-  this.pop = function () {
-    if (this.length === 0) {
-      return;
-    }
-
-    const delItem = this[this.length - 1];
-    delete this[--this.length];
-    return delItem;
-  };
+  str += '\n';
+  }
+return str;
 }
 
-MyArray.prototype = new MyProtoArray();
-
-const myArr = new MyArray();
+console.log(drowSquareWithDiagonal(10, '*'));
