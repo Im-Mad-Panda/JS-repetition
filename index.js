@@ -1,36 +1,13 @@
 "user strict";
 
-const driver1 = {
-  name: "First",
-};
+function getAverage(arr) {
+  let sum = 0;
 
-const driver2 = {
-  name: "Second",
-};
-
-const car = {
-  go: function () {
-    return `${this.name} в машине`;
-  },
-};
-driver1.__proto__ = car;
-driver2.__proto__ = car;
-
-
-
-function Forestier() {
-  this.value = 0;
-  this.up = function () {
-    this.value++;
-    return this;
-  };
-  this.down = function () {
-    this.value--;
-    return this;
-  };
-  this.showStep = function () {
-    return this.value;
-  };
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
 }
 
-const forestier = new Forestier();
+const array = [2, 3, 4, 5, 6, 7];
+console.log(getAverage(array));
