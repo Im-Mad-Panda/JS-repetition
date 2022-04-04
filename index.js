@@ -1,13 +1,37 @@
 "user strict";
 
-function getAverage(arr) {
-  let sum = 0;
+const btn = document.createElement("button");
+btn.append("Click here!");
+document.body.appendChild(btn);
 
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
-  return sum / arr.length;
+// btn.addEventListener("click", handleClick);
+
+function handleClick() {
+  const greenSquare = document.createElement("div");
+  greenSquare.classList.add("green-square");
+  document.body.append(greenSquare);
 }
 
-const array = [2, 3, 4, 5, 6, 7];
-console.log(getAverage(array));
+document.addEventListener("keydown", handleKeyPress);
+function handleKeyPress(event) {
+  if (event.key === "f") {
+    const redSquare = document.createElement("div");
+    redSquare.classList.add("red-circle");
+    document.body.append(redSquare);
+  }
+}
+
+function getColoredFigure(className, parentNode) {
+  const coloredFigure = document.createElement("div");
+  coloredFigure.classList.add(className);
+  parentNode.append(coloredFigure);
+}
+
+btn.addEventListener("click", getServerData);
+function getServerData() {
+  const resultOfRequest = fetch("https://jsonplaceholder.typicode.com/users");
+  console.log(resultOfRequest);
+  resultOfRequest
+    .then((data) => data.json())
+    .then((readyData) => console.log(readyData));
+}
